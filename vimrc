@@ -66,7 +66,7 @@ set synmaxcol=200 " stop trying colouring syntax after col 200
 set noerrorbells
 set novisualbell
 set t_vb= " more no visual bell
-set encoding=utf8
+set encoding=utf8 nobomb
 set ffs=unix,dos,mac
 " }}}
 
