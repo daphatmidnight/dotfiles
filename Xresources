@@ -1,0 +1,38 @@
+URxvt.font: xft:Input:pixelsize=11
+URxvt.boldFont: xft:Input:pixelsize=11:bold
+URxvt.italicFont: xft:Input:pixelsize=11:italic
+URxvt.boldItalicFont: xft:Input:pixelsize=11:bold:italic
+
+*background: #171717
+*foreground: #c7c7c7
+! black
+*color0: #171717
+*color8: #686868
+! red
+*color1: #fe4386
+*color9: #fa80ac
+! green
+*color2: #a6e32d
+*color10: #bde371
+! yellow
+*color3: #e6da73
+*color11: #fff27f
+! blue
+*color4: #0094d9
+*color12: #00beff
+! magenta
+*color5: #9b37ff
+*color13: #be9eff
+! cyan
+*color6: #50b7d9
+*color14: #5ed7ff
+! white
+*color7: #c7c7c7
+*color15: #ffffff
+
+URxvt.scrollBar: false
+URxvt.scrollBar_right: true
+
+URxvt.perl-ext-common: fullscreen
+URxvt.keysym.F11: perl:fullscreen:switch
+
