@@ -1,5 +1,4 @@
 " My vimrc
-" 07-2016
 " unit
 
 " Colours {{{
@@ -18,9 +17,11 @@ set shiftround
 set modelines=0   " /* vim: set ... will be ignored
 set autoindent
 filetype plugin indent on " load lang specific indentation
+set endofline
 " }}}
 
 " Appearance {{{
+set background=dark
 set number      " show line ruler
 set showcmd     " show last command (hidden w/ powerline)
 set showmode    " show current mode in command line
@@ -75,4 +76,3 @@ set noswapfile
 set nobackup
 set nowritebackup
 " }}}
-
