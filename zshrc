@@ -1,5 +1,4 @@
 # system custom
-xmodmap ~/.Xmodmap
 [[ $TERM == *"rxvt"* ]] && wmctrl -r :ACTIVE: -b add,fullscreen
 
 # load plugin manager
