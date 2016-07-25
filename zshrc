@@ -28,7 +28,8 @@ zplug load
 # behaviour
 export EDITOR=vim
 export LANG=en_GB.UTF-8
-DEFAULT_USER=chip
+#DEFAULT_USER=chip
+# define DEFAULT_USER in ~/.zshrc.local!!!
 
 # history 101
 HISTFILE=$HOME/.zsh-history
@@ -54,4 +55,6 @@ setopt auto_pushd
 setopt pushd_minus
 setopt pushd_ignore_dups
 setopt complete_aliases
+
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
