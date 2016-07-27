@@ -7,3 +7,18 @@
 	ui = auto
 [push]
 	default = simple
+[alias]
+	co = checkout
+  s = status -s
+  cl = clone
+  c = commit -m
+  ca = commit -a -m
+  a = add
+  ac = !git add . && git commit -am
+  d = diff
+
+  l = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  le = log --oneline --decorate
+
