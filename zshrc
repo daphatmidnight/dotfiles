@@ -30,6 +30,12 @@ export LANG=en_GB.UTF-8
 #DEFAULT_USER=chip
 # define DEFAULT_USER in ~/.zshrc.local!!!
 
+# looks
+autoload -U colors && colors
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
+ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
+# does not work on NetBSD or OpenBSD
+
 # history 101
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=10000
