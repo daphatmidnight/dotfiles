@@ -1,20 +1,19 @@
 # system custom
 [[ $TERM == *"rxvt"* ]] && wmctrl -r :ACTIVE: -b add,fullscreen
 
-# check for zplug
-[[ -d ~/.zplug ]] || {
-  curl -sL zplug.sh/installer
-}
-
 # load plugin manager
 source ~/.zplug/init.zsh
+
 
 zplug "agnoster/agnoster-zsh-theme"
 zplug "lib/directories", \
   from:oh-my-zsh
 zplug "lib/completion", \
   from:oh-my-zsh
+zplug "k4rthik/git-cal", \
+  as:command
 zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", \
   nice:10
 
@@ -31,6 +30,7 @@ fi
 zplug load --verbose
 
 # behaviour
+umask 022
 export EDITOR=vim
 export LANG=en_GB.UTF-8
 #DEFAULT_USER=chip
