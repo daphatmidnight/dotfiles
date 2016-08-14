@@ -4,7 +4,7 @@
 # load plugin manager
 source ~/.zplug/init.zsh
 
-
+zplug "lukechilds/zsh-nvm"
 zplug "agnoster/agnoster-zsh-theme"
 zplug "lib/directories", \
   from:oh-my-zsh

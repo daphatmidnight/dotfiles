@@ -1,5 +1,5 @@
 " Colours {{{
-"colorscheme unknown
+
 " Note: green is not a creative colour.
 " }}}
 
@@ -18,7 +18,7 @@ set endofline
 set background=dark
 set number      " show line ruler
 set showcmd     " show last command (hidden w/ powerline)
-set showmode    " show current mode in command line
+set noshowmode    " show current mode in command line
 set cursorline
 set scrolloff=6 " keep cursor somewhat centered
 set showmatch   " highlight over matching bracket
@@ -62,7 +62,25 @@ set nobackup
 set nowritebackup
 " }}}
 
-" Binds {{{
-let mapleader="\<Space>"
+" Plugins {{{
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'tomasr/molokai'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+call plug#end()
 " }}}
 
+" Binds {{{
+let mapleader="\<Space>"
+
+nnoremap <Leader>w :w<CR>
+" }}}
+
+" Plugin settings {{{
+let g:airline_powerline_fonts=1
+let g:airline_theme='powerlineish'
+colorscheme molokai
+" }}}
