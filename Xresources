@@ -3,6 +3,7 @@ URxvt.font: xft:Input:pixelsize=11
 URxvt.boldFont: xft:Input:pixelsize=11:bold
 URxvt.italicFont: xft:Input:pixelsize=11:italic
 URxvt.boldItalicFont: xft:Input:pixelsize=11:bold:italic
+URxvt.letterSpace: -1
 
 ! cursor
 URxvt.cursorBlink:          true
@@ -15,6 +16,7 @@ URxvt.pointerBlank:         true
 ! scrollbar
 URxvt.scrollBar: false
 
+URxvt.termName: xterm-256color
 ! colours: molokai
 URxvt.background: #171717
 URxvt.foreground: #C7C7C7
@@ -36,4 +38,7 @@ URxvt.color12: #00beff
 URxvt.color13: #be9eff
 URxvt.color14: #5ed7ff
 URxvt.color15: #ffffff
+
+URxvt.perl-ext-common: fullscreen
+URxvt.keysym.F11: perl:fullscreen:switch
 

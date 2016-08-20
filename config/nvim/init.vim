@@ -11,6 +11,7 @@ set shiftwidth=2
 set shiftround
 set modelines=0   " /* vim: set ... will be ignored
 filetype plugin indent on " load lang specific indentation
+set breakindent
 set endofline
 " }}}
 
@@ -70,6 +71,8 @@ Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'edkolev/tmuxline.vim'
+
 call plug#end()
 " }}}
 
@@ -83,4 +86,5 @@ nnoremap <Leader>w :w<CR>
 let g:airline_powerline_fonts=1
 let g:airline_theme='powerlineish'
 colorscheme molokai
+let g:rehash256=1
 " }}}
