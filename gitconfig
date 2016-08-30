@@ -1,6 +1,5 @@
-[user]
-	name = unit
-	email = unitofcentralprocessing@users.noreply.github.com
+[include]
+  path = ~/.gitconfig.local
 [core]
 	editor = vim
 [color]
