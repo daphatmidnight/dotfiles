@@ -66,12 +66,19 @@ set nowritebackup
 " Plugins {{{
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'airblade/vim-gitgutter'
+Plug 'ap/vim-css-color'
+Plug 'edkolev/tmuxline.vim'
+Plug 'jceb/vim-orgmode'
+Plug 'scrooloose/syntastic'
 Plug 'tomasr/molokai'
-
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-Plug 'edkolev/tmuxline.vim'
+Plug 'wellle/targets.vim'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 " }}}
