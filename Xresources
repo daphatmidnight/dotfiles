@@ -18,7 +18,7 @@ URxvt.scrollBar: false
 URxvt.termName: xterm-256color
 
 ! special
-*.foreground:   #5c6370
+*.foreground:   #abb2bf
 *.background:   #1e2127
 *.cursorColor:  #5c6370
 
