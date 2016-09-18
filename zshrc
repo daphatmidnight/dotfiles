@@ -31,7 +31,7 @@ zplug load --verbose
 
 # behaviour
 umask 022
-export EDITOR=vim
+export EDITOR=nvim
 export LANG=en_GB.UTF-8
 #DEFAULT_USER=chip
 # define DEFAULT_USER in ~/.zshrc.local!!!
@@ -67,6 +67,9 @@ setopt auto_pushd
 setopt pushd_minus
 setopt pushd_ignore_dups
 setopt complete_aliases
+
+# my aliases
+alias ni="nvim"
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
