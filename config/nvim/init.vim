@@ -13,6 +13,7 @@ set modelines=0           " /* vim: set ... will be ignored
 filetype plugin indent on " load lang specific indentation
 set autoindent
 set smartindent
+set breakindent
 set endofline
 set list listchars=tab:->,trail:·
 " }}}
@@ -28,8 +29,7 @@ set showmatch     " highlight over matching bracket
 set matchtime=2   " blink for 0.2s
 set report=0      " shows N lines have been changed
 set shortmess=atI " shortens messages
-highlight Comment cterm=italic
-highlight htmlArg cterm=italic
+set termguicolors
 " }}}
 
 " Behaviour {{{
@@ -72,15 +72,17 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-vim'
+Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-css-color'
 Plug 'ap/vim-css-color', { 'for': ['css','scss'] }
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-Plug 'edkolev/tmuxline.vim'
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'ervandew/supertab'
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/vim-easy-align'
@@ -90,9 +92,11 @@ Plug 'neomake/neomake'
 Plug 'ntpeters/vim-airline-colornum'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'scrooloose/syntastic'
 Plug 'sickill/vim-pasta'
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-repeat'
@@ -103,6 +107,7 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'wellle/targets.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 " }}}
@@ -120,18 +125,21 @@ let g:airline_powerline_fonts=1
 let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled=1
 colorscheme onedark
-let g:rehash256=1
+let g:onedark_termcolors=16
 let g:deoplete#enable_at_startup=1
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\]
+set completeopt=longest,menuone,preview
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
 
 " Start interactive EasyAlign in visual mode (vipga)
 xmap ga <Plug>(EasyAlign)

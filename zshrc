@@ -37,7 +37,7 @@ export LANG=en_GB.UTF-8
 # define DEFAULT_USER in ~/.zshrc.local!!!
 
 # looks
-export TERM=xterm-256color
+export TERM="screen-256color"
 autoload -U colors && colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
@@ -69,6 +69,7 @@ setopt pushd_ignore_dups
 setopt complete_aliases
 
 # my aliases
+alias tmux="tmux -2"
 alias ni="nvim"
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
