@@ -18,41 +18,41 @@ URxvt.scrollBar: false
 URxvt.termName: xterm-256color
 
 ! special
-*.foreground:   #abb2bf
+*.foreground:   #9ba2b3
 *.background:   #1e2127
-*.cursorColor:  #5c6370
+*.cursorColor:  #9ba2b3
 
 ! black
 *.color0:       #1e2127
-*.color8:       #5c6370
+*.color8:       #2f3441
 
 ! red
-*.color1:       #e06c75
-*.color9:       #e06c75
+*.color1:       #d65562
+*.color9:       #ae3b36
 
 ! green
-*.color2:       #98c379
-*.color10:      #98c379
+*.color2:       #88b966
+*.color10:      #88b966
 
 ! yellow
-*.color3:       #d19a66
-*.color11:      #d19a66
+*.color3:       #deb468
+*.color11:      #c58853
 
 ! blue
-*.color4:       #61afef
-*.color12:      #61afef
+*.color4:       #519deb
+*.color12:      #519deb
 
 ! magenta
-*.color5:       #c678dd
-*.color13:      #c678dd
+*.color5:       #b85dd5
+*.color13:      #b85dd5
 
 ! cyan
-*.color6:       #56b6c2
-*.color14:      #56b6c2
+*.color6:       #48a8b5
+*.color14:      #48a8b5
 
 ! white
-*.color7:       #abb2bf
-*.color15:      #ffffff
+*.color7:       #9ba2b1
+*.color15:      #4a535d
 
 URxvt.perl-ext-common: fullscreen
 URxvt.keysym.F11: perl:fullscreen:switch
