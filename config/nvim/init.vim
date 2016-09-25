@@ -108,6 +108,7 @@ Plug 'wellle/targets.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'sheerun/vim-polyglot'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 " }}}
@@ -124,8 +125,8 @@ nnoremap <ESC> :noh<return><ESC>
 let g:airline_powerline_fonts=1
 let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled=1
-colorscheme onedark
-let g:onedark_termcolors=16
+colorscheme base16-default-dark
+
 let g:deoplete#enable_at_startup=1
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
