@@ -17,7 +17,7 @@ URxvt*.scrollBar: false
 
 URxvt*.internalBorder: 1
 URxvt*.dynamicColors: on
-URxvt*.termName: rxvt-256color
+URxvt*.termName: rxvt-unicode-256color
 
 ! special
 *.foreground:   #9ba2b3
