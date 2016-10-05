@@ -61,12 +61,6 @@ set novisualbell
 set ffs=unix,dos,mac
 " }}}
 
-" Backups {{{
-set noswapfile
-set nobackup
-set nowritebackup
-" }}}
-
 " Plugins {{{
 call plug#begin('~/.config/nvim/plugged')
 
@@ -126,7 +120,7 @@ let g:airline_powerline_fonts=1
 let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled=1
 colorscheme onedark
-
+let g:onedark_termcolors=16
 let g:deoplete#enable_at_startup=1
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 

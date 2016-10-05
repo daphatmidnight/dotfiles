@@ -1,8 +1,8 @@
 ! fonts
-URxvt*.font: xft:Input:size=11
-URxvt*.boldFont: xft:Input:size=11:bold
-URxvt*.italicFont: xft:Input:size=11:italic
-URxvt*.boldItalicFont: xft:Input:size=11:bold:italic
+URxvt*.font: xft:Input:pixelsize=11
+URxvt*.boldFont: xft:Input:pixelsize=11:bold
+URxvt*.italicFont: xft:Input:pixelsize=11:italic
+URxvt*.boldItalicFont: xft:Input:pixelsize=11:bold:italic
 URxvt*.letterSpace: -1
 
 ! cursor
@@ -17,7 +17,6 @@ URxvt*.scrollBar: false
 
 URxvt*.internalBorder: 1
 URxvt*.dynamicColors: on
-URxvt*.termName: rxvt-unicode-256color
 
 ! special
 *.foreground:   #9ba2b3
