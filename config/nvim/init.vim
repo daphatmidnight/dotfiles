@@ -1,66 +1,3 @@
-" Colours {{{
-
-" Note: green is not a creative colour.
-" }}}
-
-" Indentation {{{
-set tabstop=2
-set expandtab             " tabs -> spaces
-set softtabstop=2         " TAB key -> 2 spaces
-set shiftwidth=2
-set shiftround
-set modelines=0           " /* vim: set ... will be ignored
-filetype plugin indent on " load lang specific indentation
-set autoindent
-set smartindent
-set breakindent
-set endofline
-set list listchars=tab:->,trail:·
-" }}}
-
-" Appearance {{{
-set background=dark
-set number        " show line ruler
-set showcmd       " show last command (hidden w/ powerline)
-set noshowmode    " show current mode in command line
-set cursorline
-set scrolloff=8   " keep cursor somewhat centered
-set showmatch     " highlight over matching bracket
-set matchtime=2   " blink for 0.2s
-set report=0      " shows N lines have been changed
-set shortmess=atI " shortens messages
-set termguicolors
-" }}}
-
-" Behaviour {{{
-set autowrite   " :w on leaving buffer
-set wildmode=list:longest
-set hidden      " switch buffers w/o saving
-set splitbelow
-set splitright
-set clipboard+=unnamedplus
-" }}}
-
-" Searching {{{
-set wrapscan  " search wraps around end-of-file
-set ignorecase
-set smartcase
-" }}}
-
-" Folding {{{
-set foldenable  " will obviously start Folding@Home
-set foldlevelstart=10
-set foldmethod=manual
-" }}}
-
-" Engine {{{
-set lazyredraw
-set synmaxcol=200 " stop trying colouring syntax after col 200
-set noerrorbells
-set novisualbell
-set ffs=unix,dos,mac
-" }}}
-
 " Plugins {{{
 call plug#begin('~/.config/nvim/plugged')
 
@@ -107,11 +44,78 @@ Plug 'chriskempson/base16-vim'
 call plug#end()
 " }}}
 
+" Colours {{{
+
+" Note: green is not a creative colour.
+" }}}
+
+" Indentation {{{
+set tabstop=2
+set expandtab             " tabs -> spaces
+set softtabstop=2         " TAB key -> 2 spaces
+set shiftwidth=2
+set shiftround
+set modelines=0           " /* vim: set ... will be ignored
+filetype plugin indent on " load lang specific indentation
+set autoindent
+set smartindent
+set breakindent
+set endofline
+set list listchars=tab:->,trail:·
+" }}}
+
+" Appearance {{{
+set background=dark
+set number        " show line ruler
+set showcmd       " show last command (hidden w/ powerline)
+set noshowmode    " show current mode in command line
+set cursorline
+set scrolloff=150 " keep cursor very centered
+set showmatch     " highlight over matching bracket
+set matchtime=2   " blink for 0.2s
+set report=0      " shows N lines have been changed
+set shortmess=atI " shortens messages
+set termguicolors
+" }}}
+
+" Behaviour {{{
+set autowrite   " :w on leaving buffer
+set wildmode=list:longest
+set hidden      " switch buffers w/o saving
+set splitbelow
+set splitright
+set clipboard+=unnamedplus
+" }}}
+
+" Searching {{{
+set wrapscan  " search wraps around end-of-file
+set ignorecase
+set smartcase
+" }}}
+
+" Folding {{{
+set foldenable  " will obviously start Folding@Home
+set foldlevelstart=10
+set foldmethod=manual
+" }}}
+
+" Engine {{{
+set lazyredraw
+set synmaxcol=200 " stop trying colouring syntax after col 200
+set noerrorbells
+set novisualbell
+set ffs=unix,dos,mac
+" }}}
+
 " Binds {{{
 let mapleader="\<Space>"
 
 nnoremap <Leader>w :w<CR>
 
+nnoremap j jzz
+nnoremap k kzz
+nnoremap { {zz
+nnoremap } }zz
 nnoremap <ESC> :noh<return><ESC>
 " }}}
 
