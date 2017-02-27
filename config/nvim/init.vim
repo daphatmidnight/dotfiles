@@ -40,6 +40,10 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'sheerun/vim-polyglot'
 Plug 'chriskempson/base16-vim'
+Plug 'ajgrf/sprinkles'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'godlygeek/csapprox'
 
 call plug#end()
 " }}}
@@ -120,11 +124,12 @@ nnoremap <ESC> :noh<return><ESC>
 " }}}
 
 " Plugin settings {{{
+au colorscheme * hi normal guibg=none
+colorscheme hybrid_material
+let g:hybrid_custom_term_colors=1
 let g:airline_powerline_fonts=1
-let g:airline_theme='onedark'
+let g:airline_theme='hybrid'
 let g:airline#extensions#tabline#enabled=1
-colorscheme onedark
-let g:onedark_termcolors=16
 let g:deoplete#enable_at_startup=1
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
@@ -139,6 +144,21 @@ let g:deoplete#sources = {}
 let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
+let g:CSApprox_hook_post = [
+  \ 'highlight Normal            guibg=NONE',
+  \ 'highlight LineNr            guibg=NONE',
+  \ 'highlight SignifyLineAdd    gui=bold guibg=NONE guifg=green',
+  \ 'highlight SignifyLineDelete gui=bold guibg=NONE guifg=red',
+  \ 'highlight SignifyLineChange gui=bold guibg=NONE guifg=yellow',
+  \ 'highlight SignifySignAdd    gui=bold guibg=NONE guifg=green',
+  \ 'highlight SignifySignDelete gui=bold guibg=NONE guifg=red',
+  \ 'highlight SignifySignChange gui=bold guibg=NONE guifg=yellow',
+  \ 'highlight SignColumn        guibg=NONE',
+  \ 'highlight Folded            guibg=NONE gui=bold',
+  \ 'highlight FoldColumn        guibg=NONE gui=bold',
+  \ 'highlight NonText           guibg=NONE',
+  \ 'highlight clear LineNr'
+\]
 
 " Start interactive EasyAlign in visual mode (vipga)
 xmap ga <Plug>(EasyAlign)

@@ -1,75 +1,99 @@
-# system custom
-[[ $TERM == *"rxvt"* ]] && wmctrl -r :ACTIVE: -b add,fullscreen
-
-# load plugin manager
 source ~/.zplug/init.zsh
 
-zplug "lukechilds/zsh-nvm"
-zplug "agnoster/agnoster-zsh-theme"
-zplug "lib/directories", \
-  from:oh-my-zsh
-zplug "lib/completion", \
-  from:oh-my-zsh
-zplug "k4rthik/git-cal", \
-  as:command
-zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", \
-  nice:10
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/battery", from:oh-my-zsh
+zplug "plugins/brew", from:oh-my-zsh
+zplug "plugins/archlinux", from:oh-my-zsh
+zplug "plugins/lol", from:oh-my-zsh
+zplug "plugins/nyan", from:oh-my-zsh
+zplug "djui/alias-tips"
+zplug "denysdovhan/spaceship-zsh-theme", as:theme
+zplug "raylee/tldr"
 
-# installation check
+# Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
-  printf "Install? [y/n]: "
+  printf "Install? [y/N]: "
   if read -q; then
     echo; zplug install
-  else
-    echo
   fi
 fi
 
-zplug load --verbose
+zplug load
+
+# system custom
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # behaviour
-umask 022
-export EDITOR=nvim
-export LANG=en_GB.UTF-8
-#DEFAULT_USER=chip
-# define DEFAULT_USER in ~/.zshrc.local!!!
-
-# looks
-autoload -U colors && colors
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
-ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
-# does not work on NetBSD or OpenBSD
-
-# history 101
-HISTFILE=$HOME/.zsh-history
-HISTSIZE=10000
-SAVEHIST=10000
+export COMPLETION_WAITING_DOTS="true"
+setopt auto_menu
+setopt complete_in_word
+setopt always_to_end
+unsetopt menu_complete
+unsetopt flowcontrol
+setopt auto_cd
+setopt complete_aliases
+setopt extended_glob
+setopt correct
 setopt append_history
 setopt extended_history
 setopt hist_expire_dups_first
+setopt hist_ignore_all_dups
 setopt hist_ignore_dups
 setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
 setopt hist_verify
-setopt inc_append_history
 setopt share_history
-
-# straight outta completion
-setopt auto_list
-setopt auto_param_slash
-setopt auto_param_keys
-setopt list_types
-setopt list_packed
-setopt auto_cd
-setopt auto_pushd
-setopt pushd_minus
 setopt pushd_ignore_dups
-setopt complete_aliases
+setopt interactivecomments
+HISTSIZE=100000
+SAVEHIST=100000
+HISTFILE=~/.zsh_history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+REPORTTIME=1
+TIMEFMT="%U user %S system %P cpu %*Es total"
+unsetopt correctall
+autoload -U colors && colors
+export LSCOLORS='Exfxcxdxbxegedabagacad'
+export LS_COLORS='di=1;34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
+
+export EDITOR=nvim
+#DEFAULT_USER=chip
+# define DEFAULT_USER in ~/.zshrc.local!!!
+
+# plugin behaviour
+SPACESHIP_VI_MODE_SHOW=false
+SPACESHIP_PROMPT_SYMBOL=">"
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # my aliases
+alias l="ls -aFG"
+alias ll="ls -ahlFG"
+alias lll="ls -ahlFG | less"
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+alias ssh="ssh -A"
 alias tmux="tmux -2"
 alias ni="nvim"
+alias please="sudo"
+alias wget="wget -c"
+alias external_ip="curl -s icanhazip.com"
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias reattach="echo 'todo: put the correct cmd in ur zshrc'"
+alias matrix="cmatrix -ab"
+alias pipe="pipes.sh -r 0"
+alias weather="curl -s wttr.in | head -7"
+alias yt="youtube-dl"
+alias ..="cd .."
+alias ...="cd ../.."
 
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-
+# startup cmds
+weather
