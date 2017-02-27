@@ -24,3 +24,6 @@
   cal = !git-cal
 [calendar]
 	period = -3
+[user]
+	name = unitofcentralprocessing
+	email = unitofcentralprocessing@users.noreply.github.com
