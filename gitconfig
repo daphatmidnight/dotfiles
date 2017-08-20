@@ -1,7 +1,8 @@
 [include]
   path = ~/.gitconfig.local
 [core]
-	editor = vim
+	editor = nvim
+	excludesfile = /Users/dana/.gitignore.local
 [color]
 	ui = auto
 [push]
@@ -15,6 +16,7 @@
   a = add
   ac = !git add . && git commit -am
   d = diff
+  ls = ls-files
 
   l = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
@@ -25,5 +27,12 @@
 [calendar]
 	period = -3
 [user]
-	name = unitofcentralprocessing
-	email = unitofcentralprocessing@users.noreply.github.com
+	name = Dana de Waal
+	email = d@waal.me
+	signingkey = 25879BB2E0041E000539F9951A5B62E7B153C8D3
+[commit]
+	gpgsign = true
+[mergetool]
+	path = nvim
+[gpg]
+	program = gpg

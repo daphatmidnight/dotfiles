@@ -1,0 +1,3 @@
+DOTFILES_DIRS="/Users/dana/dots"
+EXCLUDES="README* install*"
+UNDOTTED="Brewfile"
