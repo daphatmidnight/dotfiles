@@ -68,6 +68,7 @@ set gdefault
 " Behaviour
 filetype plugin indent on
 set iskeyword-=_
+set nofoldenable
 
 " Binds
 let mapleader="\<Space>"
