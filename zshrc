@@ -29,6 +29,7 @@ zplug load
 
 # system custom
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+export PATH="/Users/dana/homebrew/sbin:$PATH"
 
 # behaviour
 export COMPLETION_WAITING_DOTS="true"
@@ -70,6 +71,9 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 export EDITOR=nvim
 #DEFAULT_USER=chip
 # define DEFAULT_USER in ~/.zshrc.local!!!
+
+export NVM_DIR="$HOME/.nvm"
+. "/Users/dana/homebrew/opt/nvm/nvm.sh"
 
 # plugin behaviour
 SPACESHIP_VI_MODE_SHOW=false
